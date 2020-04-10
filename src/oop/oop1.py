@@ -32,7 +32,7 @@ class FlightVehicle(Vehicle):
         pass
 
 
-class StartShip(FlightVehicle):
+class Starship(FlightVehicle):
     def __init__(self):
         super().__init__()
         pass
@@ -45,19 +45,19 @@ class Airplane(FlightVehicle):
 
 
 # =============== Ground Vehicles ===============
-class GroundVehicles(Vehicle):
+class GroundVehicle(Vehicle):
     def __init__(self):
         super().__init__()
         pass
 
 
-class Car(GroundVehicles):
+class Car(GroundVehicle):
     def __init__(self):
         super().__init__()
         pass
 
 
-class Motorcycle(GroundVehicles):
+class Motorcycle(GroundVehicle):
     def __init__(self):
         super().__init__()
         pass

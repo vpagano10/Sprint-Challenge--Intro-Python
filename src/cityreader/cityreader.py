@@ -10,7 +10,7 @@ class City:
         self.lon = lon
 
     def __str__(self):
-        city = f"City Name: {self.name}, Lat: {self.lat}, Lon: {self.lon}\n"
+        city = f" {self.name}, {self.lat}, {self.lon}\n"
         return city
 
 
@@ -36,8 +36,10 @@ def cityreader(cities=[]):
     with open("cities.csv", "r") as csvfile:
         city_reader = csv.reader(csvfile)
         for column in city_reader:
-            city_entry = City(column[0], column[3], column[4])
-            cities.append(city_entry)
+            if column[0] != "city":
+                city_entry = City(column[0], float(
+                    column[3]), float(column[4]))
+                cities.append(city_entry)
         return cities
 
 
@@ -47,6 +49,7 @@ cityreader(cities)
 # Print the list of cities (name, lat, lon), 1 record per line.
 for c in cities:
     print(c)
+
 
 # STRETCH GOAL!
 #
